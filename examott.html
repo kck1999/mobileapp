@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam OTT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<!-- Header Section -->
+<header>
+    <h1>Exam OTT</h1>
+</header>
+
+<!-- Form Container -->
+<div id="form-container" class="container">
+    <h2>Enter Your Details</h2>
+    <form id="student-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<!-- Test Options Section -->
+<div id="test-options-container" class="container hidden">
+    <h2>Choose a Test</h2>
+    <button id="mock-test-btn">Mock Test</button>
+    <button id="conceptual-test-btn">Conceptual Test</button>
+</div>
+
+<!-- Mock Test Container -->
+<div id="mock-test-container" class="container hidden">
+    <h2>Mock Test - Questions</h2>
+    <div id="questions-list"></div>
+</div>
+
+<!-- Conceptual Test Container -->
+<div id="conceptual-test-container" class="container hidden">
+    <h2>Conceptual Test - Stage 1: Select Subject</h2>
+    <select id="subject-select">
+        <option value="">Select Subject</option>
+        <option value="Mathematics">Mathematics</option>
+        <option value="Science">Science</option>
+        <option value="English">English</option>
+    </select>
+    <button id="next-btn">Next</button>
+</div>
+
+<!-- Chapter Selection (Conceptual Test Stage 2) -->
+<div id="chapter-selection" class="container hidden">
+    <h2>Conceptual Test - Stage 2: Select Chapter</h2>
+    <select id="chapter-select">
+        <option value="">Select Chapter</option>
+    </select>
+    <button id="submit-chapter-btn">Submit</button>
+</div>
+
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+
+</body>
+</html>
